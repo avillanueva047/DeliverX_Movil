@@ -1,5 +1,7 @@
 {
   "name": "DeliverX_Movil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
