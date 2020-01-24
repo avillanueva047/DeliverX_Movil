@@ -2,6 +2,6 @@
 
 ## About
 
-DeliverX for Mobile is an application created with the Cordova Framework. Cordova wraps your HTML/JavaScript app into a native container which can access the device functions of several platforms.
+Ionic Framework is the free, open source mobile UI toolkit for developing high-quality cross-platform apps for native iOS, Android, and the web—all from a single codebase
 
 Made it for the propuse of Business Practice.
