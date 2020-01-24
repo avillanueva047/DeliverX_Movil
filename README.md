@@ -2,6 +2,7 @@
 
 ## About
 
+DeliverX for Mobile is an application created with the Ionic Framework.
 Ionic Framework is the free, open source mobile UI toolkit for developing high-quality cross-platform apps for native iOS, Android, and the web—all from a single codebase
 
 Made it for the propuse of Business Practice.
