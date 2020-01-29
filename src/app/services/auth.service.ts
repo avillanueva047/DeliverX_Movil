@@ -48,7 +48,7 @@ export class AuthService {
       'Authorization': this.token["token_type"]+" "+this.token["access_token"]
     });
 
-    return this.http.get(this.env.API_URL + 'auh/logout', { headers: headers })
+    return this.http.get(this.env.API_URL + 'auth/logout', { headers: headers })
     .pipe(
       tap(data => {
         this.storage.remove("token");
