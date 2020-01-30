@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'email',
+    loadChildren: () => import('./pages/auth/password/email/email.module').then( m => m.EmailPageModule)
+  },
+  {
+    path: 'reset',
+    loadChildren: () => import('./pages/auth/password/reset/reset.module').then( m => m.ResetPageModule)
   }
 ];
 
