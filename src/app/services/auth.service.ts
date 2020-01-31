@@ -43,6 +43,12 @@ export class AuthService {
     )
   }
 
+  reset(email: String) {
+    return this.http.post(this.env.API_URL + 'auth/reset',
+      {email: email}
+    )
+  }
+
   logout() {
     const headers = new HttpHeaders({
       'Authorization': this.token["token_type"]+" "+this.token["access_token"]

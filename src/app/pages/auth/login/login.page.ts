@@ -4,6 +4,7 @@ import { RegisterPage } from '../register/register.page';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertService } from 'src/app/services/alert.service';
+import { ResetPage } from '../password/reset/reset.page';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +35,14 @@ export class LoginPage implements OnInit {
    });
    return await registerModal.present();
   }
+
+  async resetModal() {
+    const resetModal = await this.modalController.create({
+      component: ResetPage
+    });
+    return await resetModal.present();
+  }
+
   login(form: NgForm) {
    this.authService.login(form.value.email, form.value.password).subscribe(
      data => {
