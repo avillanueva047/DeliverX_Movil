@@ -29,7 +29,6 @@ export class DashboardPage implements OnInit {
         this.authService.getDeliveries(this.user.id).subscribe(
           deliveries => {
             this.deliveries = deliveries;
-            console.log(this.deliveries);
           }
         );
       }
