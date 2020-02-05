@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/models/user';
+import { Delivery } from 'src/app/models/delivery';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +12,7 @@ import { User } from 'src/app/models/user';
 export class DashboardPage implements OnInit {
 
   user : User;
+  deliveries : Delivery[];
 
   constructor(private menu: MenuController, private authService: AuthService) {
     this.menu.enable(true);
@@ -24,6 +26,12 @@ export class DashboardPage implements OnInit {
     this.authService.user().subscribe(
       user => {
         this.user = user;
+        this.authService.getDeliveries(this.user.id).subscribe(
+          deliveries => {
+            this.deliveries = deliveries;
+            console.log(this.deliveries);
+          }
+        );
       }
     );
   }

@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { EnvService } from './env.service';
 import { User } from '../models/user';
+import { Delivery } from '../models/delivery';
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +75,19 @@ export class AuthService {
     .pipe(
       tap(user => {
         return user;
+      })
+    )
+  }
+
+  getDeliveries(id: number) {
+    const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"]+" "+this.token["access_token"]
+    });
+
+    return this.http.get<Delivery[]>(this.env.API_URL + 'auth/deliveries/' + id, {headers: headers})
+    .pipe(
+      tap(deliveries => {
+        return deliveries;
       })
     )
   }

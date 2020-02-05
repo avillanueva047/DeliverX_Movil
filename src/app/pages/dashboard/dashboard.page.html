@@ -9,6 +9,18 @@
 
 <ion-content padding>
   <div *ngIf="user != undefined">
-    Welcome {{ user["first_name"] }} {{ user["last_name]"] }}
+    Welcome {{ user["name"] }}
   </div>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>delivery_name</th>
+      <th>deliver_name</th>
+    </tr>
+    <tr *ngFor="let item of deliveries;">
+      <td>{{item.id}}</td>
+      <td>{{item.delivery_name}}</td>
+      <td>{{item.deliver_name}}</td> 
+    </tr>
+  </table>
 </ion-content>
