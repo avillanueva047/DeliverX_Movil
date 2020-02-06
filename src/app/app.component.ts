@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -18,13 +17,14 @@ export class AppComponent {
       url: '/dashboard',
       icon: 'home',
     },
-    {
+    /*{
       title: 'Home',
       url: '/home',
       icon: 'home'
     },
+    */
     {
-      title: 'List',
+      title: 'Delivered',
       url: '/list',
       icon: 'list'
     }

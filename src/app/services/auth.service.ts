@@ -1,10 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap, catchError } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { EnvService } from './env.service';
 import { User } from '../models/user';
 import { Delivery } from '../models/delivery';
+import { Delivered } from '../models/delivered';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +14,14 @@ import { Delivery } from '../models/delivery';
 export class AuthService {
   isLoggedIn =  false;
   token:any;
+  lat: number;
+  lon: number;
 
   constructor(
     private http: HttpClient,
     private storage: NativeStorage,
     private env: EnvService,
+    private geolocation: Geolocation
   ) { }
 
   login(email:String, password: String){
@@ -45,11 +50,15 @@ export class AuthService {
   }
 
   delivered(id: number, user_id: number) {
-    console.log(id);
-    console.log(user_id);
-    return this.http.post(this.env.API_URL + 'auth/delivered',
-      {id: id, user_id: user_id, latitude: 0.0, longitude: 0.0}
-    )
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.lat = resp.coords.latitude;
+      this.lon = resp.coords.longitude;
+      return this.http.post(this.env.API_URL + 'auth/delivered',
+        {id: id, user_id: user_id, latitude: this.lat, longitude: this.lon}
+      ).subscribe()
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
   }
 
   reset(email: String) {
@@ -96,6 +105,19 @@ export class AuthService {
     .pipe(
       tap(deliveries => {
         return deliveries;
+      })
+    )
+  }
+
+  getDelivered(id: number) {
+    const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"]+" "+this.token["access_token"]
+    });
+
+    return this.http.get<Delivered[]>(this.env.API_URL + 'auth/delivered/' + id, {headers: headers})
+    .pipe(
+      tap(delivered => {
+        return delivered;
       })
     )
   }

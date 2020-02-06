@@ -4,19 +4,16 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Delivered
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
+    <ion-item *ngFor="let deliver of delivered">
+      <ion-icon name="cube"></ion-icon>
+      <ion-label>{{deliver.delivery_name}}</ion-label>
     </ion-item>
   </ion-list>
   <!--

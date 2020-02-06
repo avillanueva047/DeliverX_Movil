@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -36,7 +35,8 @@ export class DashboardPage implements OnInit {
     );
   }
 
-  markAsDelivered(id:number){
+  markAsDelivered(id:number, index: number){
+    this.deliveries.splice(index, 1);
     this.delivered(id, this.user.id)
   }
 
