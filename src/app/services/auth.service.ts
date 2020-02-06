@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, catchError } from 'rxjs/operators';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { EnvService } from './env.service';
 import { User } from '../models/user';
@@ -41,6 +41,14 @@ export class AuthService {
   register(fName: String, lName: String, email: String, password: String) {
     return this.http.post(this.env.API_URL + 'auth/register',
       {fName: fName, lName: lName, email: email, password: password}
+    )
+  }
+
+  delivered(id: number, user_id: number) {
+    console.log(id);
+    console.log(user_id);
+    return this.http.post(this.env.API_URL + 'auth/delivered',
+      {id: id, user_id: user_id, latitude: 0.0, longitude: 0.0}
     )
   }
 

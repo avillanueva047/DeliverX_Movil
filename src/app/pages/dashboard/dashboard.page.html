@@ -8,16 +8,14 @@
 </ion-header>
 
 <ion-content padding>
-  <table>
-    <tr>
-      <th>id</th>
-      <th>delivery_name</th>
-      <th>deliver_name</th>
-    </tr>
-    <tr *ngFor="let delivery of deliveries;">
-      <td>{{delivery.id}}</td>
-      <td>{{delivery.delivery_name}}</td>
-      <td>{{delivery.deliver_name}}</td>
-    </tr>
-  </table>
+  <ion-list>
+    <ion-item *ngFor="let delivery of deliveries;">
+      <ion-icon name="cube"></ion-icon>
+      <ion-label>{{delivery.delivery_name}}</ion-label>
+      <ion-button (click)="markAsDelivered(delivery.id)" color="success">
+        <ion-icon name="checkmark"></ion-icon>
+        Delivered
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
