@@ -1,5 +1,5 @@
 ion-content{
-  --background: url('https://cdn.motor1.com/images/mgl/18QwK/s1/mercedes-benz-sprinter-delivery-van.jpg') no-repeat center;
+  --background: url('https://www.incimages.com/uploaded_files/image/1940x900/getty_82775222_362189.jpg') no-repeat center;
 }
 .layer {
     background-color: rgba(0, 0, 0, 0.85);
@@ -12,5 +12,10 @@ ion-content{
 
 .title{
   font-size: 2em;
-  height: 200;
+  font-weight: 900;
+}
+
+ion-button{
+  font-weight: 900;
+  font-family: verdana;
 }
