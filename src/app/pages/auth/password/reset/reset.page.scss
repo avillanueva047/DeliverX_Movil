@@ -1,0 +1,44 @@
+ion-toolbar{
+  --border-style: hidden;
+  --background: rgba(0, 0, 0, 0);
+}
+
+.header-md:after{
+  height: 0px;
+}
+
+.description{
+  font-family: verdana;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+ion-item{
+  --background: rgba(255, 204, 102, 0)
+}
+
+ion-content{
+  --background: url('https://www.incimages.com/uploaded_files/image/1940x900/getty_82775222_362189.jpg') no-repeat center;
+}
+
+.title{
+  font-size: 1.5em;
+  font-weight: 900;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.layer {
+  background-color: rgba(252, 186, 3, 0.80);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ion-button{
+  font-weight: 900;
+  font-family: verdana;
+}

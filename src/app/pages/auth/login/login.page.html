@@ -10,27 +10,27 @@
     </div>
     -->
   <div align="center" style="padding-top: 60px">
-    <img src="https://github.com/avillanueva047/DeliverX_Movil/blob/master/logo_with_title_trasnparent_white_notitle.png?raw=true" width="150px" height="150px">
+    <img src="https://github.com/avillanueva047/DeliverX_Movil/blob/master/logo_with_title_trasnparent_black_white.png?raw=true" width="150px" height="150px">
   </div>
 
   <form #form="ngForm" (ngSubmit)="login(form)" method="post">
-    <div >
-      <div style="padding-left: 40px; padding-right: 40px">
+    <div>
+      <div style="padding-left: 40px; padding-right: 40px; padding-top: 40px">
         <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input ngModel type="email" name="email"></ion-input>
+          <ion-label style="font-family: verdana" position="floating">Email</ion-label>
+          <ion-input style="font-family: verdana" ngModel type="email" name="email"></ion-input>
         </ion-item>
       </div>
 
       <div style="padding-left: 40px; padding-right: 40px">
         <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input ngModel type="password" name="password"></ion-input>
+          <ion-label style="font-family: verdana" position="floating">Password</ion-label>
+          <ion-input style="font-family: verdana" ngModel type="password" name="password"></ion-input>
         </ion-item>
       </div>
     </div>
 
-    <div style="padding-left: 40px; padding-right: 40px; padding-top: 40px" align="center">
+    <div style="padding-left: 40px; padding-right: 40px; padding-top: 80px" align="center">
       <ion-button color="dark" shape="round" fill="outline" type="submit" expand="block">Login</ion-button>
     </div>
 

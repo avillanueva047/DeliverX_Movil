@@ -1,26 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start" (click)="dismissReset()">
-      <ion-button color="dark" fill="outline">
-      <ion-icon name="arrow-back"></ion-icon>
-        Back
-      </ion-button>
-    </ion-buttons>
-
-    <ion-title align="center">Reset Password</ion-title>
-
-    <ion-buttons slot="end">
-
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-  <form #form="ngForm" (ngSubmit)="reset(form)" method="post">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input ngModel type="email" name="email"></ion-input>
-    </ion-item>
-    <ion-button type="submit" expand="full" color="primary">Send Email</ion-button>
-  </form>
+  <div class="layer">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="dismissReset()">
+          <ion-button color="dark" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <h1 class="title" style="font-family: verdana">Forgot Password</h1>
+      </ion-toolbar>
+
+    </ion-header>
+
+    <div style="padding-left: 40px; padding-top: 40px">
+      <ion-text color="dark">
+        <h1 class="description" style="font-family: verdana">
+          <p>Please enter your registered email <br> or to reset your password</p>
+        </h1>
+      </ion-text>
+    </div>
+
+    <form #form="ngForm" (ngSubmit)="reset(form)" method="post">
+      <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px">
+        <ion-item>
+          <ion-label style="font-family: verdana" position="floating">Email</ion-label>
+          <ion-input style="font-family: verdana" ngModel type="email" name="email"></ion-input>
+        </ion-item>
+      </div>
+
+      <div style="padding-left: 40px; padding-right: 40px; padding-top: 60px">
+        <ion-button type="submit" shape="round" fill="outline" expand="full" color="dark">Send Email</ion-button>
+      </div>
+    </form>
+
+    <div align="center" style="padding-top: 80px">
+      <img src="https://github.com/avillanueva047/DeliverX_Movil/blob/master/logo_with_title_trasnparent_black_white.png?raw=true" width="150px" height="150px">
+    </div>
+  </div>
 </ion-content>
