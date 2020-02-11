@@ -122,6 +122,13 @@ export class AuthService {
     )
   }
 
+  changePassword(password: String, new_password: String, repeat_password: String) {
+    const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"]+" "+this.token["access_token"]
+    });
+    return this.http.post(this.env.API_URL, {headers: headers})
+  }
+
   getToken() {
     return this.storage.getItem('token').then(
       data => {

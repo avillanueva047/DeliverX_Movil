@@ -24,7 +24,7 @@ export class AppComponent {
     },
     {
       title: 'Change Password',
-      url: '/home',
+      url: '/change-password',
       icon: 'key'
     },
   ];
