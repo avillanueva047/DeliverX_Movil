@@ -13,21 +13,20 @@ import { AlertService } from './services/alert.service';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Dashboard',
+      title: 'Pending Items',
       url: '/dashboard',
-      icon: 'home',
+      icon: 'clock',
     },
-    /*{
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    */
     {
-      title: 'Delivered',
+      title: 'Items Delivered',
       url: '/list',
-      icon: 'list'
-    }
+      icon: 'checkmark'
+    },
+    {
+      title: 'Change Password',
+      url: '/home',
+      icon: 'key'
+    },
   ];
 
   constructor(

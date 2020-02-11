@@ -13,6 +13,11 @@ a{
   font-weight: 700;
 }
 
+.item-interactive.ion-valid{
+  --ion-color-primary: #000000;
+  --ion-color-success: #000000
+}
+
 ion-item{
   --background: rgba(255, 204, 102, 0)
 }

@@ -17,6 +17,11 @@ ion-item{
   --background: rgba(255, 204, 102, 0)
 }
 
+.item-interactive.ion-valid{
+  --ion-color-primary: #000000;
+  --ion-color-success: #000000
+}
+
 ion-content{
   --background: url('https://www.incimages.com/uploaded_files/image/1940x900/getty_82775222_362189.jpg') no-repeat center;
 }
