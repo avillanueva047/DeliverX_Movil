@@ -3,18 +3,18 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Pending Deliveries</ion-title>
+    <ion-title style="font-family: verdana">Pending Deliveries</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let delivery of deliveries; let index = index">
+  <ion-list style="padding-top: 0px; padding-bottom: 0px" >
+    <ion-item *ngFor="let delivery of deliveries; let index = index" lines="none">
       <ion-icon name="cube"></ion-icon>
-      <ion-label>{{delivery.delivery_name}}</ion-label>
-      <ion-button (click)="markAsDelivered(delivery.id, index)" color="success">
-        <ion-icon name="checkmark"></ion-icon>
-        Delivered
+      <ion-label style="font-family: verdana">{{delivery.delivery_name}}</ion-label>
+      <ion-button (click)="markAsDelivered(delivery.id, index)" color="warning" style="font-family: verdana">
+        <ion-icon color="light" name="checkmark"></ion-icon>
+        Mark as Done
       </ion-button>
     </ion-item>
   </ion-list>
