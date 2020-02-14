@@ -3,6 +3,7 @@ import { ModalController, MenuController, NavController } from '@ionic/angular';
 import { RegisterPage } from '../auth/register/register.page';
 import { LoginPage } from '../auth/login/login.page';
 import { AuthService } from 'src/app/services/auth.service';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-landing',
@@ -16,8 +17,11 @@ export class LandingPage implements OnInit {
     private menu: MenuController,
     private authService: AuthService,
     private navCtrl: NavController,
+    private statusBar: StatusBar
   ) {
     this.menu.enable(false);
+    this.statusBar.overlaysWebView(true);
+    this.statusBar.backgroundColorByHexString('#fffffff');
   }
 
   ionViewWillEnter() {

@@ -12,7 +12,13 @@
 <ion-content>
   <ion-list style="padding-top: 0px; padding-bottom: 0px">
     <ion-item *ngFor="let deliver of delivered">
-      <ion-label style="font-family: verdana">{{deliver.delivery_name}}</ion-label>
+      <ion-label style="font-family: verdana">
+        {{deliver.delivery_name}}
+        <br>
+        <p class="direction" style="font-family: verdana">
+          {{deliver.client_direction}}
+        </p>
+      </ion-label>
     </ion-item>
   </ion-list>
   <!--
