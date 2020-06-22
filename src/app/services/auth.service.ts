@@ -113,7 +113,7 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Authorization': this.token["token_type"]+" "+this.token["access_token"]
     });
-
+    console.log(headers);
     return this.http.get<Delivered[]>(this.env.API_URL + 'auth/delivered/' + id, {headers: headers})
     .pipe(
       tap(delivered => {
@@ -122,11 +122,12 @@ export class AuthService {
     )
   }
 
-  changePassword(password: String, new_password: String, repeat_password: String) {
+  changePassword(password: String, new_password: String, repeat_password: String, id: number) {
     const headers = new HttpHeaders({
       'Authorization': this.token["token_type"]+" "+this.token["access_token"]
     });
-    return this.http.post(this.env.API_URL, {headers: headers})
+    console.log(headers);
+    return this.http.post(this.env.API_URL + 'auth/changePassword', {headers: headers})
   }
 
   getToken() {
